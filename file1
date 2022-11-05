@@ -1,0 +1,90 @@
+iWhere is git going to check the local level configuration:
+
+$ cat .git/config
+
+Command to edit set global configuration:
+
+git config --global --edit
+
+git config --global --edit
+
+>  unsetting our configuration file using flag --unset in git config --global
+command.
+Command used: git config --global --unset user.email
+
+ git config --global --unset user.name
+
+
+Scenario 2:
+*********************
+
+Take an existing file which is tracked
+
+$ make changes in the file
+
+$ git diff filename
+
+$ git diff index1.html
+
+Discard the changes that are in working directory permanently
+
+$ git restore index1.html
+
+OR
+
+$ git checkout -- index1.html
+
+Discard the changes from staging area back to working directory:
+
+$ git restore –staged index1.html
+
+OR
+
+$ git reset HEAD index1.html
+
+
+If a changes are committed on a file and you want to go back to previous version of the file then use revert command
+
+$ git revert commit id
+
+***************************************************************
+
+Day 3:
+*********************
+
+
+
+Git reset command and its options
+
+ Git reset command:
+
+This command is applied on your commit history
+
+This command is used when you want to discard changes done as part of multiple commits
+
+This command will also delete your commit ids, you will not be able to see the ids
+
+Reset command with its option --hard 
+can remove changes and commit ids 
+hence it is also called as a destrcutive command
+
+Once reset command is executed it never generates a commit id or there is no log for its operation 
+
+When we use the reset command, we are resetting the HEAD of the commits
+
+git reset --hard <commitid>
+
+Other rest options that are safe to use and used frequently are:
+
+ git reset --soft <commitid>
+
+The <commitid> becomes the head and orphan commit id will be deleted fromlog and 
+files or changes will move back to staging area
+ 
+
+ git reset --mixed <commitid>
+
+The <commitid> becomes the head and orphan commit ids will be deleted from log and files or changes
+ will move back to Unstaged area
+ 
+
